@@ -1,0 +1,270 @@
+{% extends 'inc/base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .b10{
+          position: relative;
+          left: 5%;
+          color: aliceblue;
+          border-radius: 5px;
+          background-color: brown;
+          border: 2px solid brown;
+        }
+        .vb1{
+          position: relative;
+          left: 35%;
+          color: aliceblue;
+          border-radius: 5px;
+          background-color: rgb(153, 39, 159);
+          border: 2px solid rgb(2, 240, 2);
+        }
+  .q1{
+   width: 45px;
+  background:#5593AD;
+ }
+ .q12{
+   width: 35px;
+  background:#5593AD;
+ }
+.q11{
+width: 20px;
+  background:#5593AD;
+}  
+.first{
+width: 755px;
+}  
+.point{
+margin-top: -64%;
+width: 750px;
+height: 20px;
+background-color: #6792E7;
+border: 3px solid #6792E7;
+margin-left: 23%;
+           
+}
+.tfirst{
+ margin-left: -0.1%;
+}
+.h1{
+padding-top: 1.5%;
+}
+.b3{
+position: absolute;
+top: 3.2%;
+left: 85%;
+}
+.onea{
+ background:#5593AD;
+ color:white;
+ width: 15px;
+ height:50px;
+ text-align:center;
+ padding-top:25px ;
+ font-size: 13px;
+}
+.oneb{
+ background:#5593AD;
+ color:white;
+ width: 38px;
+ height:50px;
+ text-align:center;
+ padding-top:25px ;
+ font-size: 13px;
+}
+.onec{
+ background:#5593AD;
+ color:white;
+ width: 48px;
+ height:50px;
+ text-align:center;
+ padding-top:25px ;
+ font-size: 13px;
+}
+.oned{
+ background:#5593AD;
+ color:white;
+ width: 50px;
+ height:50px;
+ text-align:center;
+ padding-top:25px ;
+ font-size: 13px;
+}
+.onee{
+ background:#5593AD;
+ color:white;
+ width: 45px;
+ height:50px;
+ text-align:center;
+ padding-top:25px ;
+ font-size: 13px;
+}
+.onef{
+ background:#5593AD;
+ color:#ffffff;
+ width: 50px;
+ height:50px;
+ text-align:center;
+ padding-top:25px ;
+ font-size: 13px;
+}
+.oneg{
+ background:#5593AD;
+ color:white;
+ width: 50px;
+ height:50px;
+ text-align:center;
+ padding-top:25px ;
+ font-size: 13px;
+}
+.oneh{
+ background:#5593AD;
+ color:white;
+ width: 40px;
+ height:50px;
+ text-align:center;
+ padding-top:25px ;
+ font-size: 13px;
+}
+.onei{
+ background:#5593AD;
+ color:white;
+ width: 40px;
+ height:50px;
+ text-align:center;
+ padding-top:25px ;
+ font-size: 13px;
+}
+.onej{
+ background:#5593AD;
+ color:white;
+ width: 65px;
+ height:50px;
+ text-align:center;
+ padding-top:25px ;
+ font-size: 13px;
+}
+.onek{
+ background:#5593AD;
+ color:white;
+ width: 50px;
+ height:50px;
+ text-align:center;
+ padding-top:25px ;
+ font-size: 13px;
+}
+.onel{
+ background:#5593AD;
+ color:white;
+ width: 45px;
+ height:50px;
+ text-align:center;
+ padding-top:25px ;
+ font-size: 13px;
+}
+.b1{
+    background-color: brown;
+    border: 2px solid brown ;
+  }
+  .n5{
+ 
+    border: 3px solid rgb(2, 240, 2);
+  }
+  .n4{
+  top: 76px;
+}
+.n5{ width: 133px;
+      height:65px ;
+       background:#D9D9D9 ;
+       position: relative;
+       top: 136px;
+       left: 20px;
+       font-family: inherit;
+       font-weight: 400;
+       font-size: 20px;
+       line-height: 24.2px;
+       text-align: center;
+       word-spacing: 25px;
+       
+       color: blue;
+}
+.n7{
+  width: 133px;
+      height:36px ;
+       background:#D9D9D9 ;
+       position: relative;
+       top: 106px;
+       left: 20px;
+       font-family: inherit;
+       font-weight: 400;
+       font-size: 20px;
+       line-height: 24.2px;
+       text-align: center;
+       word-spacing: 25px;
+       border: 2px solid white;
+       color: blue;
+}
+</style>
+<div class="h1">
+    <div class="h22">
+      <a href="{% url 'createtravellar' %}"> <button class="n1">Travellar</button></a>
+   
+      <a href="{% url 'createairlines' %}"><button class="n2">Airlines</button></a>
+      <a href="{% url 'createriskaction' %}"><button class="n4">Risk Action</button></a>
+       <a href="{% url 'createcrew' %}"><button class="n7">Crew</button></a>
+      
+
+    <a href="{% url 'createjourneysearch' %}"><button class="n5">Journey Search</button></a>
+     <div class="n6"> <img src="{% static 'mai.png' %}" alt="MAI logo " width="96px" height="188px"></div>
+    </div>
+   
+     <div class="h33">
+
+     </div>
+     
+     <div class=first>
+        <form  class="mnbb" action="{% url 'editjourneysearch' journeysearch.id %}" method="POST">
+            {% csrf_token %}
+        <table class=tfirst>
+          <tr>
+            <th><div class=onea>Id</div></th>
+            <th><div class=oneb>No </div></th>
+            <th><div class=onec>Name</div></th>
+                <th><div class=oned>D.O.B</div></th>
+            <th><div class=onee>Father</div></th>
+            <th><div class=onef>Passport</div></th>
+            <th><div class=oneg>Gender</div></th>
+                <th><div  class="oneh">Flight Name</div> </th>
+                <th><div class="onei">Sector</div></th>
+                <th><div class=onej>Departure date and time</div></th>
+                <th><div  class="onek">Arrival date and time</div> </th>
+                <th><div class="onel">Risk Status</div> </th>
+                
+          </tr>
+          <tr>
+            <td>  <input type="text" class="q11" id="id"  name="id"></td>
+            <td>  <input type="text" class="q12" id="no"  name="no"></td>
+            <td> <input type="text" class="q1" id="name"  name="name"></td>
+            <td> <input type="text" class="q1" id="dob"  name="dob"></td>
+            <td> <input type="text" class="q1" id="father"  name="father"></td>
+            <td> <input type="text" class="q1" id="passport"  name="passport"></td>
+            <td> <input type="text" class="q1" id="gender"  name="gender"></td>
+            <td> <input type="text" class="q1" id="flightname"  name="flightname"></td>
+            <td> <input type="text" class="q1" id="sector"  name="sector"></td>
+            <td> <input type="text" class="q1" id="departuredateandtime"  name="departuredateandtime"></td>
+            <td> <input type="text" class="q1" id="arrivaldateandtime"  name="arrivaldateandtime"></td>
+            <td><input type="text" class="q1" id="riskstatus"  name="riskstatus"></td>
+            
+          </tr>
+       
+        
+        </table>
+        <button class="b3" type="submit" >DONE</button>
+      </form>
+      </div>
+      
+      <div class="point">
+        <a href="{% url 'indexjourneysearch' %}"><button class="b10">ALL LISTS</button></a>
+        <button class="vb1" type="submit" >EDIT</button>
+        
+      </div>
+{% endblock %}

@@ -1,0 +1,207 @@
+
+{% extends 'inc/base.html' %}
+{% load static %}
+{% block content %}
+<style>
+  .q1{
+   width: 48px;
+  background:#5593AD;
+ }
+.q11{
+width: 20px;
+  background:#5593AD;
+}  
+.first{
+width: 755px;
+}  
+.point{
+margin-top: -71.5%;
+width: 750px;
+}
+.tfirst{
+ margin-left: -0.1%;
+}
+.h1{
+padding-top: 1.5%;
+}
+.b3{
+position: absolute;
+top: 3.2%;
+left: 85%;
+}
+.onea{
+ background:#5593AD;
+ color:white;
+ width: 40px;
+ height:50px;
+ text-align:center;
+ padding-top:25px ;
+ font-size: 13px;
+}
+.oneb{
+ background:#5593AD;
+ color:white;
+ width: 60px;
+ height:50px;
+ text-align:center;
+ padding-top:25px ;
+ font-size: 13px;
+}
+.onec{
+ background:#5593AD;
+ color:white;
+ width: 80px;
+ height:50px;
+ text-align:center;
+ padding-top:25px ;
+ font-size: 13px;
+}
+.oned{
+ background:#5593AD;
+ color:white;
+ width: 80px;
+ height:50px;
+ text-align:center;
+ padding-top:25px ;
+ font-size: 13px;
+}
+.onee{
+ background:#5593AD;
+ color:white;
+ width: 80px;
+ height:50px;
+ text-align:center;
+ padding-top:25px ;
+ font-size: 13px;
+}
+.onef{
+ background:#5593AD;
+ color:white;
+ width: 80px;
+ height:50px;
+ text-align:center;
+ padding-top:25px ;
+ font-size: 13px;
+}
+.oneg{
+ background:#5593AD;
+ color:white;
+ width: 95px;
+ height:50px;
+ text-align:center;
+ padding-top:25px ;
+ font-size: 13px;
+}
+.oneh{
+ background:#5593AD;
+ color:white;
+ width: 95px;
+ height:50px;
+ text-align:center;
+ padding-top:25px ;
+ font-size: 13px;
+}
+
+
+.b1{
+    background-color: brown;
+    border: 2px solid brown ;
+  }
+  .n7{
+ 
+    border: 3px solid rgb(2, 240, 2);
+  }
+  .n4{
+  top: 76px;
+}
+.n5{ width: 133px;
+      height:65px ;
+       background:#D9D9D9 ;
+       position: relative;
+       top: 136px;
+       left: 20px;
+       font-family: inherit;
+       font-weight: 400;
+       font-size: 20px;
+       line-height: 24.2px;
+       text-align: center;
+       word-spacing: 25px;
+       border: 2px solid white;
+       color: blue;
+}
+.n7{
+  width: 133px;
+      height:36px ;
+       background:#D9D9D9 ;
+       position: relative;
+       top: 106px;
+       left: 20px;
+       font-family: inherit;
+       font-weight: 400;
+       font-size: 20px;
+       line-height: 24.2px;
+       text-align: center;
+       word-spacing: 25px;
+       
+       color: blue;
+}
+</style>
+<div class="h1">
+    <div class="h22">
+     
+      <a href="{% url 'createtravellar' %}"> <button class="n1">Travellar</button></a>
+   
+      <a href="{% url 'createairlines' %}"><button class="n2">Airlines</button></a>
+      <a href="{% url 'createriskaction' %}"><button class="n4">Risk Action</button></a>
+       <a href="{% url 'createcrew' %}"><button class="n7">Crew</button></a>
+      
+
+    <a href="{% url 'createjourneysearch' %}"><button class="n5">Journey Search</button></a>
+     <div class="n6"> <img src="{% static 'mai.png' %}" alt="MAI logo " width="96px" height="188px"></div>
+    </div>
+   
+     <div class="h33">
+
+     </div>
+     
+     <div class=first>
+      <form  class="mnbb" action="{% url 'storecrew' %}" method="POST">
+        {% csrf_token %}
+        <table class=tfirst>
+          <tr>
+            <th><div class=onea>Id</div></th>
+            <th><div class=oneb>Flight</div></th>
+            <th><div class=onec>Service status</div></th>
+                <th><div class=oned>Name</div></th>
+            <th><div class=onee>Departure port </div></th>
+            <th><div class=onef>Arrival port </div></th>
+            <th><div class=oneg>Departure date and time</div></th>
+                <th><div  class="oneh">Arrival date and time</div> </th>
+               
+          </tr>
+         
+          <tr>
+            <td>  <input type="text" class="q11" id="id"  name="id"></td>
+            <td>  <input type="text" class="q1" id="fligt"  name="fligt"></td>
+            <td> <input type="text" class="q1" id="servicestatus"  name="servicestatus"></td>
+            <td> <input type="text" class="q1" id="name"  name="name"></td>
+            <td> <input type="text" class="q1" id="departureport"  name="departureport"></td>
+            <td> <input type="text" class="q1" id="arrivalport"  name="arrivalport"></td>
+            <td> <input type="text" class="q1" id="departuredateandtime"  name="departuredateandtime"></td>
+            <td> <input type="text" class="q1" id="arrivaldateandtime"  name="arrivaldateandtime"></td>
+           
+          </tr>
+       
+        
+        </table>
+        <button class="b3" type="submit" >DONE</button>
+      </form>
+      </div>
+      
+</div>
+<div class="point">
+  <a href="{% url 'indexcrew' %}"><button class="b1">ALL LISTS</button></a>
+  
+  
+</div>
+{% endblock %}

@@ -1,0 +1,279 @@
+{% extends 'inc/base.html' %}
+{% load static %}
+{% block content %}
+<style>
+     /* button hover */
+     .n1{
+        width:53px ;
+        height:26px ;
+       background: #D9D9D9;
+       position: relative;
+       top: 20px;
+       left: 20px;
+       font-family: inherit;
+       font-weight: 400;
+       font-size: 20px;
+       line-height: 24.2px;
+       text-align: center;
+       border: 2px solid white;
+       display: inline-block;
+       border-radius: 4px;
+       background-color: #f4511e;
+       border: none;
+       color: #FFFFFF;
+       text-align: center;
+      
+       padding: 20px;
+       width: 200px;
+       transition: all 0.5s;
+       cursor: pointer;
+       margin: 5px;
+}
+
+.n1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.n1 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.n1:hover span {
+  padding-right: 25px;
+}
+
+.n1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+  .b1{
+    background-color: brown;
+    border: 2px solid brown;
+  }
+  .n1{
+ 
+    border: 3px solid rgb(2, 240, 2);
+  }
+  .q1{
+   width: 48px;
+  background:#5593AD;
+ }
+.q11{
+width: 20px;
+  background:#5593AD;
+}  
+.first{
+width: 755px;
+}  
+.point{
+margin-top: -71.5%;
+width: 750px;
+}
+.tfirst{
+ margin-left: -0.1%;
+}
+.h1{
+padding-top: 1.5%;
+}
+.b3{
+position: absolute;
+top: 3.2%;
+left: 85%;
+}
+.one1{
+ background:#5593AD;
+ color:white;
+ width: 15px;
+ height:50px;
+ text-align:center;
+ padding-top:25px ;
+ font-size: 13px;
+}
+.one{
+        background:#5593AD;
+        color:white;
+        width: 50px;
+        height:50px;
+        text-align:center;
+        padding-top:25px ;
+        font-size: 13px;
+      }
+    
+      .two{
+          background:#5593AD;
+        color:white;
+        width:50px;
+        height:55px;
+        text-align:center;
+        padding-top:20px;
+        font-size: 13px;
+      }
+      .three{
+         background:#5593AD;
+        color:white;
+        width:50px;
+        height:50px;
+        text-align:center;
+        padding-top:25px;
+        font-size: 13px;
+      }
+      .four{
+          background:#5593AD;
+        color:white;
+        width:40px;
+        height:50px;
+        text-align:center;
+        padding-top:25px;
+        font-size: 13px;
+      }
+      .five{
+        background:#5593AD;
+        color:white;
+        width:40px;
+        height:50px;
+        text-align:center;
+        padding-top:25px;
+        font-size: 13px;
+      }
+      .six{
+        background:#5593AD;
+        color:white;
+        width:50px;
+        height:50px;
+        text-align:center;
+        padding-top:25px;
+        font-size: 13px;
+      }
+      .seven{
+        background:#5593AD;
+        color:white;
+        width:70px;
+        height:60px;
+        text-align:center;
+        padding-top:15px;
+        font-size: 13px;
+      }
+      .eight{
+        background:#5593AD;
+        color:white;
+        width:50px;
+        height:60px;
+        text-align:center;
+        padding-top:15px;
+        font-size: 13px;
+      }
+     .nine{
+            background:#5593AD;
+            color:white;
+            width:70px;
+            height:60px;
+            text-align:center;
+            padding-top:15px;
+            font-size: 13px;
+          }
+.n4{
+  top: 76px;
+}
+.n5{ width: 133px;
+      height:65px ;
+       background:#D9D9D9 ;
+       position: relative;
+       top: 136px;
+       left: 20px;
+       font-family: inherit;
+       font-weight: 400;
+       font-size: 20px;
+       line-height: 24.2px;
+       text-align: center;
+       word-spacing: 25px;
+       border: 2px solid white;
+       color: blue;
+}
+.n7{
+  width: 133px;
+      height:36px ;
+       background:#D9D9D9 ;
+       position: relative;
+       top: 106px;
+       left: 20px;
+       font-family: inherit;
+       font-weight: 400;
+       font-size: 20px;
+       line-height: 24.2px;
+       text-align: center;
+       word-spacing: 25px;
+       border: 2px solid white;
+       color: blue;
+}
+</style>
+<div class="h1">
+    <div class="h22">
+      <a href="{% url 'createtravellar' %}"> <button class="n1"> <span >Travellar</span></button></a>
+   
+      <a href="{% url 'createairlines' %}"><button class="n2">Airlines</button></a>
+      <a href="{% url 'createriskaction' %}"><button class="n4">Risk Action</button></a>
+       <a href="{% url 'createcrew' %}"><button class="n7">Crew</button></a>
+      
+
+    <a href="{% url 'createjourneysearch' %}"><button class="n5">Journey Search</button></a>
+   
+     <div class="n6"> <img src="{% static 'mai.png' %}" alt="MAI logo " width="96px" height="188px"></div>
+    </div>
+   
+     <div class="h33">
+
+     </div>
+     
+     <div class=first>
+      <form  class="mnbb" action="{% url 'storetravellar' %}" method="POST">
+        {% csrf_token %}
+        <table class=tfirst>
+          <tr>
+            <th><div class=one1>Id</div></th>
+            <th><div class=one>Flight</div></th>
+                <th><div class=two>Time frame</div></th>
+            <th><div class=three>Name </div></th>
+            <th><div class=four>D.O.B </div></th>
+            <th><div class=five> NRC</div></th>
+                <th><div  class="six">Gender</div> </th>
+                <th><div class="nine">Departure port</div></th>
+                <th><div class="seven">Departure date and time</div> </th>
+                <th><div class="eight">Arrival port</div></th>
+                <th><div class="nine">Arrival date and time</div> </th>
+          </tr>
+          <tr>
+            <td>  <input type="text" class="q11" id="id"  name="id"></td>
+            <td>  <input type="text" class="q1" id="flight"  name="flight"></td>
+            <td> <input type="text" class="q1" id="timeframe"  name="timeframe"></td>
+            <td> <input type="text" class="q1" id="name"  name="name"></td>
+            <td> <input type="text" class="q1" id="dob"  name="dob"></td>
+            <td> <input type="text" class="q1" id="nrc"  name="nrc"></td>
+            <td> <input type="text" class="q1" id="gender"  name="gender"></td>
+            <td> <input type="text" class="q1" id="departureport"  name="departureport"></td>
+            <td> <input type="text" class="q1" id="departuredateandtime"  name="departuredateandtime"></td>
+            <td> <input type="text" class="q1" id="arrivalport"  name="arrivalport"></td>
+            <td> <input type="text" class="q1" id="arrivaldateandtime"  name="arrivaldateandtime"></td>
+           
+          </tr>
+       
+        
+        </table>
+        <button class="b3" type="submit" >DONE</button>
+      </form>
+      </div>
+      
+</div>
+<div class="point">
+  <a href="{% url 'indextravellar' %}"><button class="b1">ALL LISTS</button></a>
+  
+  
+</div>
+{% endblock %}

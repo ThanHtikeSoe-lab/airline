@@ -1,0 +1,235 @@
+{% extends 'inc/base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .n1{
+ 
+     border: 3px solid rgb(2, 240, 2);}
+    .q1{
+          width: 48px;
+         background:#5593AD;
+        }
+    .q11{
+      width: 20px;
+         background:#5593AD;
+    }  
+    .first{
+     width: 755px;
+    }  
+    .point{
+      margin-top: -71.5%;
+      width: 750px;
+    }
+   .tfirst{
+        margin-left: -0.1%;
+   }
+   .h1{
+    padding-top: 1.5%;
+   }
+   .b3{
+    position: absolute;
+    top: 3.2%;
+    left: 85%;
+   }
+   .one1{
+ background:#5593AD;
+ color:white;
+ width: 15px;
+ height:50px;
+ text-align:center;
+ padding-top:25px ;
+ font-size: 13px;
+}
+.one{
+        background:#5593AD;
+        color:white;
+        width: 50px;
+        height:50px;
+        text-align:center;
+        padding-top:25px ;
+        font-size: 13px;
+      }
+    
+      .two{
+          background:#5593AD;
+        color:white;
+        width:50px;
+        height:55px;
+        text-align:center;
+        padding-top:20px;
+        font-size: 13px;
+      }
+      .three{
+         background:#5593AD;
+        color:white;
+        width:50px;
+        height:50px;
+        text-align:center;
+        padding-top:25px;
+        font-size: 13px;
+      }
+      .four{
+          background:#5593AD;
+        color:white;
+        width:40px;
+        height:50px;
+        text-align:center;
+        padding-top:25px;
+        font-size: 13px;
+      }
+      .five{
+        background:#5593AD;
+        color:white;
+        width:40px;
+        height:50px;
+        text-align:center;
+        padding-top:25px;
+        font-size: 13px;
+      }
+      .six{
+        background:#5593AD;
+        color:white;
+        width:50px;
+        height:50px;
+        text-align:center;
+        padding-top:25px;
+        font-size: 13px;
+      }
+      .seven{
+        background:#5593AD;
+        color:white;
+        width:70px;
+        height:60px;
+        text-align:center;
+        padding-top:15px;
+        font-size: 13px;
+      }
+      .eight{
+        background:#5593AD;
+        color:white;
+        width:50px;
+        height:60px;
+        text-align:center;
+        padding-top:15px;
+        font-size: 13px;
+      }
+     .nine{
+            background:#5593AD;
+            color:white;
+            width:70px;
+            height:60px;
+            text-align:center;
+            padding-top:15px;
+            font-size: 13px;
+          }
+      .b1{
+          position: relative;
+          left: 5%;
+          color: aliceblue;
+          border-radius: 5px;
+          background-color: brown;
+          border: 2px solid rgb(2, 240, 2) ;
+        }
+        .n4{
+  top: 76px;
+}
+.n5{ width: 133px;
+      height:65px ;
+       background:#D9D9D9 ;
+       position: relative;
+       top: 136px;
+       left: 20px;
+       font-family: inherit;
+       font-weight: 400;
+       font-size: 20px;
+       line-height: 24.2px;
+       text-align: center;
+       word-spacing: 25px;
+       border: 2px solid white;
+       color: blue;
+}
+.n7{
+  width: 133px;
+      height:36px ;
+       background:#D9D9D9 ;
+       position: relative;
+       top: 106px;
+       left: 20px;
+       font-family: inherit;
+       font-weight: 400;
+       font-size: 20px;
+       line-height: 24.2px;
+       text-align: center;
+       word-spacing: 25px;
+       border: 2px solid white;
+       color: blue;
+}
+</style>
+<div class="h1">
+    <div class="h22">
+      
+      <a href="{% url 'createtravellar' %}"> <button class="n1">Travellar</button></a>
+   
+      <a href="{% url 'createairlines' %}"><button class="n2">Airlines</button></a>
+      <a href="{% url 'createriskaction' %}"><button class="n4">Risk Action</button></a>
+       <a href="{% url 'createcrew' %}"><button class="n7">Crew</button></a>
+      
+
+    <a href="{% url 'createjourneysearch' %}"><button class="n5">Journey Search</button></a>
+     <div class="n6"> <img src="{% static 'mai.png' %}" alt="MAI logo " width="96px" height="188px"></div>
+    </div>
+   
+     <div class="h33">
+
+     </div>
+     
+     <div class=first>
+      
+        <table class=tfirst>
+          <tr>
+            <th><div class=one1>Id</div></th>
+            <th><div class=one>Flight</div></th>
+                <th><div class=two>Time frame</div></th>
+            <th><div class=three>Name </div></th>
+            <th><div class=four>D.O.B </div></th>
+            <th><div class=five> NRC</div></th>
+                <th><div  class="six">Gender</div> </th>
+                <th><div class="nine">Departure port</div></th>
+                <th><div class="seven">Departure date and time</div> </th>
+                <th><div class="eight">Arrival port</div></th>
+                <th><div class="nine">Arrival date and time</div> </th>
+             <th></th>
+          </tr>
+          {% for than in travellar %}
+          <tr>
+            <td>{{ than.id}}</td>
+             <td>{{ than.flight }}</td>
+             <td>{{ than.timeframe }}</td>
+             <td>{{ than.name }}</td>
+             <td>{{ than.dob }}</td>
+             <td>{{ than.nrc }}</td>
+             <td>{{ than.gender }}</td>
+             <td>{{ than.departureport }}</td>
+             <td>{{ than.departuredateandtime }}</td>
+             <td>{{ than.arrivalport }}</td>
+             <td>{{ than.arrivaldateandtime }}</td>
+            <td> <a href="{% url 'edittravellarview' than.pk %}"> <button class="b3" type="submit" >EDIT</button></a>
+            </td>
+  
+  
+          </tr>
+         {% endfor %}
+       
+        
+        </table>
+       
+      </div>
+      
+</div>
+<div class="point">
+  <button class="b1">ALL LISTS</button>
+ 
+  
+</div>
+{% endblock %}
+     
